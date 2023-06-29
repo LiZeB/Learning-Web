@@ -1,0 +1,191 @@
+@charset "UTF-8";
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  color: red;
+  font-size: 24px;
+}
+html *:not(.text), body *:not(.text) {
+  margin: 16px;
+  width: 200px;
+  height: 200px;
+  position: relative;
+}
+
+.container1 {
+  background: lightblue; /* 纯色 */
+  background: linear-gradient(#fff, lightblue); /* 线性渐变-不加角度的渐变过渡，方向由上而下 */
+  background: linear-gradient(#fff 0%, #fff 50%, lightblue 50%, lightblue 100%); /* 线性渐变-实色过渡 */
+  background: conic-gradient(#fff, lightblue); /* 角向渐变或圆锥渐变 */
+  background: radial-gradient(#fff, lightblue); /* 径向渐变 */
+}
+
+.container2 {
+  background: lightblue;
+}
+.container2::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  width: 60px;
+  background: linear-gradient(90deg, transparent, #fff); /* 加角度的透明渐变，方向由下而上且沿顺时针方向旋转 */
+}
+
+.container3 {
+  background: linear-gradient(45deg, lightblue 0%, lightblue 50%, transparent 50%, transparent 100%); /* 线性渐变-实色过渡 */
+}
+
+.container4 {
+  background: linear-gradient(135deg, transparent 20px, lightblue 0), linear-gradient(-135deg, transparent 20px, lightblue 0), linear-gradient(-45deg, transparent 20px, lightblue 0), linear-gradient(45deg, transparent 20px, lightblue 0); /* 多组渐变 */
+  background-size: 50% 50%;
+  background-position: top left, top right, bottom right, bottom left;
+  background-repeat: no-repeat;
+}
+
+.container5 {
+  background: repeating-linear-gradient(45deg, lightblue 0, lightblue 10px, #fff 10px, #fff 30px); /* 重复片段 */
+}
+
+.container6 {
+  background: radial-gradient(#9c27b0 0%, #9c27b0 48%, #ffeb3b 48.6%, #ffeb3b 100%); /* 预留衔接空间消除渐变产生的锯齿 */
+}
+
+.text1 {
+  color: red;
+  text-decoration: underline wavy currentColor;
+}
+
+.text2 {
+  color: red;
+  background: radial-gradient(circle at 10px -7px, transparent 8px, currentColor 8px, currentColor 9px, transparent 9px) repeat-x, radial-gradient(circle at 10px 27px, transparent 8px, currentColor 8px, currentColor 9px, transparent 9px) repeat-x;
+  background-size: 20px 20px;
+  background-position: -10px calc(100% + 18px), 0 calc(100% - 2px);
+}
+@keyframes waveFlow {
+  from {
+    background-position-x: -10px, 0;
+  }
+  to {
+    background-position-x: -30px, -20px;
+  }
+}
+.text2:hover {
+  animation: waveFlow 1s infinite linear;
+}
+
+.text3 {
+  background: linear-gradient(to right, red, green, blue) no-repeat bottom right;
+  background-size: 0 2px;
+  transition: background-size 1000ms;
+}
+.text3:hover {
+  background-position-x: left;
+  background-size: 100% 2px;
+}
+
+.container7 {
+  background: lightblue;
+}
+.container7::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 40px;
+  background-repeat: repeat-x;
+  height: 10px;
+  background-size: 20px 20px;
+  background-image: radial-gradient(circle at 10px -5px, transparent 12px, #fff 13px, #fff 20px);
+}
+.container7::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 35px;
+  background-repeat: repeat-x;
+  height: 15px;
+  background-size: 40px 20px;
+  background-image: radial-gradient(circle at 10px 15px, #fff 12px, transparent 13px);
+}
+
+.container8 {
+  border-radius: 50%;
+  background: conic-gradient(red 0 20%, orange 20% 40%, yellow 40% 60%, green 60% 80%, teal 80% 85%, blue 85% 90%, purple 90% 100%);
+}
+
+.container9 {
+  /* space和comma是分割符号 */
+  /* space和comma是分割符号 */
+  /* space和comma是分割符号 */
+  /* space和comma是分割符号 */
+  /* space和comma是分割符号 */
+  /* space和comma是分割符号 */
+  /* space和comma是分割符号 */
+  /* space和comma是分割符号 */
+  /* space和comma是分割符号 */
+  /* space和comma是分割符号 */
+  /* space和comma是分割符号 */
+  /* space和comma是分割符号 */
+  /* space和comma是分割符号 */
+  /* space和comma是分割符号 */
+  /* space和comma是分割符号 */
+  /* space和comma是分割符号 */
+  /* space和comma是分割符号 */
+  /* space和comma是分割符号 */
+  /* space和comma是分割符号 */
+  /* space和comma是分割符号 */
+  /* space和comma是分割符号 */
+  border-radius: 50%;
+  background: conic-gradient(hsl(0, 100%, 50%), hsl(18, 100%, 50%), hsl(36, 100%, 50%), hsl(54, 100%, 50%), hsl(72, 100%, 50%), hsl(90, 100%, 50%), hsl(108, 100%, 50%), hsl(126, 100%, 50%), hsl(144, 100%, 50%), hsl(162, 100%, 50%), hsl(180, 100%, 50%), hsl(198, 100%, 50%), hsl(216, 100%, 50%), hsl(234, 100%, 50%), hsl(252, 100%, 50%), hsl(270, 100%, 50%), hsl(288, 100%, 50%), hsl(306, 100%, 50%), hsl(324, 100%, 50%), hsl(342, 100%, 50%), hsl(0, 100%, 50%));
+}
+
+.container10 {
+  background: conic-gradient(lightblue 0 12.5%, #fff 12.5% 37.5%, lightblue 37.5% 62.5%, #fff 62.5% 87.5%, lightblue 87.5% 100%);
+  background-size: 50px 50px;
+}
+
+.container11 {
+  background: conic-gradient(from 270deg at 50px 50px, #fff 0%, #fff 90deg, transparent 90deg, transparent 360deg) lightblue;
+  background-position: -25px -25px;
+}
+
+.container12 {
+  background: repeating-radial-gradient(circle at center center, rgb(75, 154, 242), rgb(64, 135, 228), rgb(54, 117, 214), rgb(43, 98, 200), rgb(33, 79, 185), rgb(22, 60, 171), rgb(12, 42, 157), rgb(1, 23, 143) 0.01px);
+}
+
+.container13 {
+  background: linear-gradient(90deg, #ffc700 0%, #e91e1e 50%, #6f27b0 100%);
+  background-size: 200% 100%;
+  background-position: 0 0;
+  animation: bgposition 2s infinite linear alternate;
+}
+@keyframes bgposition {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+
+.container14 {
+  background: linear-gradient(90deg, #ffc700 0%, #e91e1e 33%, #6f27b0 66%, #00ff88 100%);
+  background-position: 100% 0;
+  animation: bgSize 5s infinite ease-in-out alternate;
+}
+@keyframes bgSize {
+  0% {
+    background-size: 300% 100%;
+  }
+  100% {
+    background-size: 100% 100%;
+  }
+}
+
+/*# sourceMappingURL=background.css.map */
